@@ -2,24 +2,24 @@ package Default;
 
 public class Place {
 
-    private String code;
     private String name;
-    private String history;
     private Integer levelOfPrivacy;
+    private Address address;
 
-    public Place(String code, String name, String history, Integer levelOfPrivacy, Integer addressId) {
-        this.code = code;
+
+    public Place(String name, Integer levelOfPrivacy, Address address) {
         this.name = name;
-        this.history = history;
         this.levelOfPrivacy = levelOfPrivacy;
+        this.address = address;
+
     }
 
-    public String getCode() {
-        return code;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public String getName() {
@@ -28,14 +28,6 @@ public class Place {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getHistory() {
-        return history;
-    }
-
-    public void setHistory(String history) {
-        this.history = history;
     }
 
     public Integer getLevelOfPrivacy() {

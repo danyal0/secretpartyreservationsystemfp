@@ -2,8 +2,8 @@ package Default;
 
 import java.util.List;
 
-public class Host extends Role{
+public class Host extends UserRole {
 
-    private List<String> partiesList;
+    private List<Party> partiesList;
 
 }

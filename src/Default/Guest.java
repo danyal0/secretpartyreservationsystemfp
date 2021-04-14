@@ -2,8 +2,8 @@ package Default;
 
 import java.util.List;
 
-public class Guest extends Role {
+public class Guest extends UserRole {
 
-    private List<String> reservationList;
+    private List<Reservation> reservationList;
 
 }

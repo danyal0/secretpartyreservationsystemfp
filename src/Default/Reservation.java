@@ -1,21 +1,40 @@
 package Default;
 
 public class Reservation {
-
-    private String status;
+    private User guest;
+    private Party party;
+    private Status status;
     private Integer pressCode;
 
-    public Reservation(String status, Integer pressCode) {
+    public Reservation(User guest, Party party, Status status, Integer pressCode) {
+        this.guest = guest;
+        this.party = party;
         this.status = status;
         this.pressCode = pressCode;
     }
 
-    public String getStatus() {
-        return status;
+    public User getGuest() {
+        return guest;
     }
 
-    public void setStatus(String status) {
+    public void setGuest(User guest) {
+        this.guest = guest;
+    }
+
+    public Party getParty() {
+        return party;
+    }
+
+    public void setParty(Party party) {
+        this.party = party;
+    }
+
+    public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public Status getStatus() {
+        return status;
     }
 
     public Integer getPressCode() {
