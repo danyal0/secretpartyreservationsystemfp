@@ -1,5 +1,6 @@
 package Default;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,14 +13,14 @@ public class Party {
     private User hostUser;
     private List<Reservation> guestReservList;
 
-    public Party(Integer capacity, String dressCode, String name, Place place, Date date, User hostUser, List<Reservation> guestReservList) {
+    public Party(Integer capacity, String dressCode, String name, Place place, Date date, User hostUser) {
         this.capacity = capacity;
         this.dressCode = dressCode;
         this.name = name;
         this.place = place;
         this.date = date;
         this.hostUser = hostUser;
-        this.guestReservList = guestReservList;
+        guestReservList = new ArrayList<>();
     }
 
     public Date getDate() {
