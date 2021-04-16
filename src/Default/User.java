@@ -1,28 +1,29 @@
 package Default;
 
 import java.util.Date;
+import java.util.List;
 
 public class User {
     private String name;
     private String password;
-    private UserRole role;
+    private List<UserRole> roles;
     private String email;
     private Date dateOfBirth;
 
-    public User(String name, String password, UserRole role, String email, Date dateOfBirth) {
+    public User(String name, String password, List<UserRole> roles, String email, Date dateOfBirth) {
         this.name = name;
         this.password = password;
-        this.role = role;
+        this.roles = roles;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
     }
 
-    public UserRole getRole() {
-        return role;
+    public List<UserRole> getRoles() {
+        return roles;
     }
 
-    public void setRole(UserRole role) {
-        this.role = role;
+    public void setRoles(List<UserRole> roles) {
+        this.roles = roles;
     }
 
     public String getName() {

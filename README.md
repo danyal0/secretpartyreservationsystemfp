@@ -14,4 +14,5 @@ Danyal:
 Uulen:
 
 Angie:
+    - How many party reservations were rejected in a x month
     -

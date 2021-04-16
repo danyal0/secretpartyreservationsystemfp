@@ -1,4 +1,4 @@
 package Default;
 
-public abstract class UserRole {
+public interface UserRole {
 }
