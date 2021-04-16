@@ -9,7 +9,9 @@ Hanna:
     - List of Evening parties
     - List of parties that happened by a month
 Danyal:
-    -
+    - How many parties where hosted in a x city
+    - Top 5 Hosts in fairfield with best rating
+    - List of users that have a reservations in fairfield today
 
 Uulen:
 
