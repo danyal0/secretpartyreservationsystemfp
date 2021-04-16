@@ -57,7 +57,7 @@ public class FunctionalUtilsTest {
             reservations.add(new Reservation(muser1, party3, Status.REJECT,7));
             reservations.add(new Reservation(muser1, party3, Status.ACCEPT,8));
         assertEquals(FunctionalUtils.UsersThatHaveReservationsInXCityToday.apply(reservations,"Fairfield").size(),6);
-//        assertEquals(FunctionalUtils.UsersThatHaveReservationsInXCityToday.apply(reservations,"Fairfield"), contains("John"));
+//        assertThat(FunctionalUtils.UsersThatHaveReservationsInXCityToday.apply(reservations,"Fairfield"), contains("John"));
 
     }
 
