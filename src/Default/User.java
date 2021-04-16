@@ -2,15 +2,15 @@ package Default;
 
 import java.util.Date;
 import java.util.List;
-
+import java.time.LocalDate;
 public class User {
     private String name;
     private String password;
     private List<UserRole> roles;
     private String email;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
-    public User(String name, String password, List<UserRole> roles, String email, Date dateOfBirth) {
+    public User(String name, String password, List<UserRole> roles, String email, LocalDate dateOfBirth) {
         this.name = name;
         this.password = password;
         this.roles = roles;
@@ -54,11 +54,11 @@ public class User {
         this.email = email;
     }
 
-    public Date getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

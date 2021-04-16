@@ -2,7 +2,9 @@ package Default;
 
 import java.util.List;
 
+
 public class Host {
+    private int rating;
 
     private List<Party> partiesList;
 

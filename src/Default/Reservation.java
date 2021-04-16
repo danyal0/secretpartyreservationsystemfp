@@ -18,6 +18,14 @@ public class Reservation{
         this.payment = payment;
         this.date = date;
     }
+    public Reservation(User guest, Party party, Status status, Integer pressCode) {
+        this.guest = guest;
+        this.party = party;
+        this.status = status;
+        this.pressCode = pressCode;
+        this.payment = payment;
+        this.date = date;
+    }
 
     public User getGuest() {
         return guest;
