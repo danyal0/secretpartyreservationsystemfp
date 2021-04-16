@@ -18,6 +18,10 @@ public class User {
         this.dateOfBirth = dateOfBirth;
     }
 
+    public User(String name) {
+        this.name = name;
+    }
+
     public List<UserRole> getRoles() {
         return roles;
     }
@@ -58,4 +62,14 @@ public class User {
         this.dateOfBirth = dateOfBirth;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", roles=" + roles +
+                ", email='" + email + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                '}';
+    }
 }
