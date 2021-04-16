@@ -16,5 +16,6 @@ Danyal:
 Uulen:
 
 Angie:
-    - How many party reservations were rejected in a x month
-    -
+    - List of users which their party reservations were rejected in fairfield today 
+    - List of Hosts with worst rating in Fairfield
+    - List of parties with formal dresscode today  
