@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.time.LocalDate;
 
 public class Party {
     private Integer capacity;
@@ -13,15 +14,21 @@ public class Party {
     private LocalDate date;
     private User hostUser;
     private List<Reservation> guestReservList;
+    private String eventtime;
 
-    public Party(Integer capacity, String dressCode, String name, Place place, LocalDate date, User hostUser) {
+
+
+
+    public Party(Integer capacity, String dressCode, String name, Place place, LocalDate date, User hostUser, String eventtime) {
+
         this.capacity = capacity;
         this.dressCode = dressCode;
         this.name = name;
         this.place = place;
         this.date = date;
         this.hostUser = hostUser;
-        guestReservList = new ArrayList<>();
+       guestReservList = new ArrayList<>();
+        this.eventtime= eventtime;
     }
 
     public LocalDate getDate() {
@@ -33,7 +40,7 @@ public class Party {
     }
 
     public User getHostUser() {
-        return hostUser;
+        return this.hostUser;
     }
 
     public void setHostUser(User hostUser) {
@@ -49,11 +56,10 @@ public class Party {
     }
 
     public Place getPlace() {
-        return place;
+        return this.place;
     }
 
-    public void setPlace(Place place) {
-        this.place = place;
+    public void setPlace(Place place) { this.place = place;
     }
 
     public Integer getCapacity() {
@@ -78,6 +84,29 @@ public class Party {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEventtime() {
+        return eventtime;
+    }
+
+    public void setEventtime(String eventtime) {
+        this.eventtime = eventtime;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("<");
+        sb.append("Party Name: "+name);
+        sb.append(" Capacity: "+capacity);
+        sb.append(" DressCode: "+dressCode);
+        sb.append(" Date: "+date);
+        sb.append(" Time: "+eventtime);
+        sb.append(">");
+        return sb.toString();
+
+
+
     }
 
 }
