@@ -31,7 +31,7 @@ public class FunctionalUtilsTest {
         parties.add(new Party(6, "Hamburger", "h",place1,LocalDate.parse("2019-05-16"),user,"2021-05-01"));
         parties.add(new Party(7, "Light Sandwich", "j",place1,LocalDate.parse("2019-05-16"),user,"2021-05-01"));
         Long expected = FunctionalUtils.HowManyPartiesWhereHostedInXCity.apply(parties,"Fairfield");
-        Assert.assertEquals((long)expected,4);
+        assertEquals((long)expected,4);
 
     }
 
@@ -56,11 +56,8 @@ public class FunctionalUtilsTest {
             reservations.add(new Reservation(muser2, party2, Status.WAITING,6));
             reservations.add(new Reservation(muser1, party3, Status.REJECT,7));
             reservations.add(new Reservation(muser1, party3, Status.ACCEPT,8));
-
-            Long userc = FunctionalUtils.UsersThatHaveReservationsInXCityToday.apply(reservations,"Fairfield").stream().count();
-            Assert.assertEquals((long)userc,6);
-
-            List<User> user2 = FunctionalUtils.UsersThatHaveReservationsInXCityTodayAndAreLessThanEighteen.apply(reservations,"Fairfield",18);
+        assertEquals(FunctionalUtils.UsersThatHaveReservationsInXCityToday.apply(reservations,"Fairfield").size(),6);
+//        assertEquals(FunctionalUtils.UsersThatHaveReservationsInXCityToday.apply(reservations,"Fairfield"), contains("John"));
 
     }
 
@@ -86,10 +83,7 @@ public class FunctionalUtilsTest {
             reservations.add(new Reservation(muser1, party3, Status.REJECT,7));
             reservations.add(new Reservation(muser1, party3, Status.ACCEPT,8));
 
-
-
-            Long userc = FunctionalUtils.UsersThatHaveReservationsInXCityTodayAndAreLessThanEighteen.apply(reservations,"Fairfield",18).stream().count();
-            Assert.assertEquals((long)userc,2);
+            assertEquals(FunctionalUtils.UsersThatHaveReservationsInXCityTodayAndAreLessThanEighteen.apply(reservations,"Fairfield",18).size(),2);
     }
 
 }
