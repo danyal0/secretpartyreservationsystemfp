@@ -1,23 +1,22 @@
 package Default;
 
 
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
 import java.lang.reflect.ParameterizedType;
 import java.time.Clock;
 import java.time.LocalDate;
-import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
 
     public static void main(String[] args) {
         System.out.println("By Month:");
         PartyByMonth();
-        System.out.println("Sort By Time:");
+        System.out.println("\nSort By Time:");
         SortPartyByTime();
-        System.out.println("DressCode:");
-        PartyByDressCode();
+        System.out.println("\nParty With Largest Capacity:");
+        PartyWithLargestCapacity();
         getPartiesCountByPlace();
 
         getListOfUsersThatHaveReservationsInCityToday();
@@ -56,17 +55,16 @@ public class Main {
     public static void SortPartyByTime() {
         List<Party> party = PartyData.getParty();
         List<Party> result=party.stream()
-                .filter(p->p.getEventtime().compareTo(p.getEventtime())==0)
+               .sorted( (i1, i2) -> i1.getEventtime().compareTo(i2.getEventtime()) )
                 .collect(Collectors.toList());
         System.out.println(result);
     }
-    public static void PartyByDressCode() {
-        String DressCode="Sexy";
+    public static void PartyWithLargestCapacity() {
         List<Party> party = PartyData.getParty();
-        List<Party> result=party.stream()
-                .filter(p->p.getDressCode().equals(DressCode))
-                .collect(Collectors.toList());
-        System.out.println(result);
+        Optional<Party> MAX = party.stream().max((str1, str2) ->
+                Integer.compare(str1.getCapacity(),
+                        str2.getCapacity()));
+        System.out.println("Party Name:"+MAX.get().getName()+", with Capacity of:"+MAX.get().getCapacity());
     }
 
     public static void getListOfUsersThatHaveReservationsInCityToday(){
