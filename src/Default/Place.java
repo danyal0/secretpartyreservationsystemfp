@@ -1,5 +1,8 @@
 package Default;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Place {
 
     private String name;
@@ -36,5 +39,14 @@ public class Place {
 
     public void setLevelOfPrivacy(Integer levelOfPrivacy) {
         this.levelOfPrivacy = levelOfPrivacy;
+    }
+
+    @Override
+    public String toString() {
+        return "Place{" +
+                "name='" + name + '\'' +
+                ", levelOfPrivacy=" + levelOfPrivacy +
+                ", address=" + address +
+                '}';
     }
 }

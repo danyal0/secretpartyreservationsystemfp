@@ -5,7 +5,10 @@ import org.junit.Test;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
@@ -86,4 +89,25 @@ public class FunctionalUtilsTest {
             assertEquals(FunctionalUtils.UsersThatHaveReservationsInXCityTodayAndAreLessThanEighteen.apply(reservations,"Fairfield",18).size(),2);
     }
 
+    @Test
+    public  void testAmountHostEarnedPerYear(){
+        List<Party> parties = DataSource.partyList();
+        Host host = new Host();
+        String hostName = "Rose Smith";
+        host.setPartiesList(parties);
+        LocalDate date = LocalDate.of(2020,03,03);
+        assertEquals(java.util.Optional.ofNullable(Utils.amountHostEarnedPerYear.apply(host, hostName, date)), Optional.of(1036.5));
+    }
+    @Test
+    public  void testPartyWithMoreGuestInAMonth(){
+        List<Party> parties = DataSource.partyList();
+        LocalDate date = LocalDate.of(2020,03,03);
+        assertEquals(Utils.partyWithMoreGuestInAMonth.apply(parties,date),List.of("Caribean Wynne", "Sweet Red"));
+    }
+    @Test
+    public  void testGuestsChoosePartyHighPrivacy(){
+        List<Party> parties = DataSource.partyList();
+        LocalDate date = LocalDate.of(2020,03,03);
+        assertEquals(Utils.guestsChoosePartyHighPrivacy.apply(parties).size(),2);
+    }
 }
