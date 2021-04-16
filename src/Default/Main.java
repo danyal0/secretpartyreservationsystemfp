@@ -58,7 +58,6 @@ public class Main {
         System.out.println(result);
     }
     public static void PartyWithLargestCapacity() {
-        String DressCode="Sexy";
         List<Party> party = PartyData.getParty();
         Optional<Party> MAX = party.stream().max((str1, str2) ->
                 Integer.compare(str1.getCapacity(),
