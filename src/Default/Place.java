@@ -6,8 +6,12 @@ public class Place {
     private Integer levelOfPrivacy;
     private Address address;
 
+    public Place() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-    public Place(String name, Integer levelOfPrivacy, Address address) {
+	public Place(String name, Integer levelOfPrivacy, Address address) {
         this.name = name;
         this.levelOfPrivacy = levelOfPrivacy;
         this.address = address;

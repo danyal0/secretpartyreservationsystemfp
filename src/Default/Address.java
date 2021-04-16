@@ -5,6 +5,18 @@ public class Address {
     private String city;
     private String state;
     private String zip;
+    
+    public Address() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Address(String street, String city, String state, String zip) {
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+    }
 
     public String getStreet() {
         return street;
@@ -35,13 +47,6 @@ public class Address {
     }
 
     public void setZip(String zip) {
-        this.zip = zip;
-    }
-
-    public Address(String street, String city, String state, String zip) {
-        this.street = street;
-        this.city = city;
-        this.state = state;
         this.zip = zip;
     }
 }

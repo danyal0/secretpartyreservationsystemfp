@@ -12,8 +12,13 @@ public class Party {
     private Date date;
     private User hostUser;
     private List<Reservation> guestReservList;
+    
+    public Party() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-    public Party(Integer capacity, String dressCode, String name, Place place, Date date, User hostUser) {
+	public Party(Integer capacity, String dressCode, String name, Place place, Date date, User hostUser) {
         this.capacity = capacity;
         this.dressCode = dressCode;
         this.name = name;

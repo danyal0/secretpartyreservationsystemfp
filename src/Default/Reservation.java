@@ -5,15 +5,29 @@ public class Reservation {
     private Party party;
     private Status status;
     private Integer pressCode;
+    private double price;
+    
+    public Reservation() {
+		super();
+	}
 
-    public Reservation(User guest, Party party, Status status, Integer pressCode) {
+	public Reservation(User guest, Party party, Status status, Integer pressCode, double price) {
         this.guest = guest;
         this.party = party;
         this.status = status;
         this.pressCode = pressCode;
+        this.price = price;
     }
+	
 
-    public User getGuest() {
+
+    @Override
+	public String toString() {
+		return "Reservation [guest=" + guest.getName() + ", party=" + party.getName() + ", status=" + status + ", pressCode=" + pressCode
+				+ ", price=" + price + "]";
+	}
+
+	public User getGuest() {
         return guest;
     }
 
@@ -45,4 +59,12 @@ public class Reservation {
         this.pressCode = pressCode;
     }
 
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+ 
 }
