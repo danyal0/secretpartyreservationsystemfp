@@ -4,18 +4,18 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class User {
+public class UserU {
     private String name;
     private String password;
     private List<UserRole> roles;
     private String email;
     private Date dateOfBirth;
     
-    public User() {
+    public UserU() {
 		super();
 	}
 
-	public User(String name, String password, List<UserRole> roles, String email, Date dateOfBirth) {
+	public UserU(String name, String password, List<UserRole> roles, String email, Date dateOfBirth) {
         this.name = name;
         this.password = password;
         this.roles = roles;

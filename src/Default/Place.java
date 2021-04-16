@@ -4,26 +4,26 @@ public class Place {
 
     private String name;
     private Integer levelOfPrivacy;
-    private Address address;
+    private AddressU addressU;
 
     public Place() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Place(String name, Integer levelOfPrivacy, Address address) {
+	public Place(String name, Integer levelOfPrivacy, AddressU addressU) {
         this.name = name;
         this.levelOfPrivacy = levelOfPrivacy;
-        this.address = address;
+        this.addressU = addressU;
 
     }
 
-    public Address getAddress() {
-        return address;
+    public AddressU getAddress() {
+        return addressU;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setAddress(AddressU addressU) {
+        this.addressU = addressU;
     }
 
     public String getName() {

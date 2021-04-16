@@ -4,27 +4,27 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Party {
+public class PartyU {
     private Integer capacity;
     private String dressCode;
     private String name;
     private Place place;
     private Date date;
-    private User hostUser;
-    private List<Reservation> guestReservList;
+    private UserU hostUserU;
+    private List<ReservationU> guestReservList;
     
-    public Party() {
+    public PartyU() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Party(Integer capacity, String dressCode, String name, Place place, Date date, User hostUser) {
+	public PartyU(Integer capacity, String dressCode, String name, Place place, Date date, UserU hostUserU) {
         this.capacity = capacity;
         this.dressCode = dressCode;
         this.name = name;
         this.place = place;
         this.date = date;
-        this.hostUser = hostUser;
+        this.hostUserU = hostUserU;
         guestReservList = new ArrayList<>();
     }
 
@@ -36,19 +36,19 @@ public class Party {
         this.date = date;
     }
 
-    public User getHostUser() {
-        return hostUser;
+    public UserU getHostUser() {
+        return hostUserU;
     }
 
-    public void setHostUser(User hostUser) {
-        this.hostUser = hostUser;
+    public void setHostUser(UserU hostUserU) {
+        this.hostUserU = hostUserU;
     }
 
-    public List<Reservation> getGuestReservList() {
+    public List<ReservationU> getGuestReservList() {
         return guestReservList;
     }
 
-    public void setGuestReservList(List<Reservation> guestReservList) {
+    public void setGuestReservList(List<ReservationU> guestReservList) {
         this.guestReservList = guestReservList;
     }
 

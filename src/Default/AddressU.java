@@ -1,17 +1,17 @@
 package Default;
 
-public class Address {
+public class AddressU {
     private String street;
     private String city;
     private String state;
     private String zip;
     
-    public Address() {
+    public AddressU() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Address(String street, String city, String state, String zip) {
+	public AddressU(String street, String city, String state, String zip) {
         this.street = street;
         this.city = city;
         this.state = state;

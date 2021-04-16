@@ -14,69 +14,69 @@ public class Main {
     
     public static void getDetails()
     {
-    	User hostUser = TestFactory.createUser("John", "john@gmail.com", "jhon", 1991, 5, 10);
-        User guestUser1 = TestFactory.createUser("Uulen", "uulen@gmail.com", "123", 1996, 3, 16);
-        User guestUser2 = TestFactory.createUser("Tony", "tony@gmail.com", "123", 1994, 7, 23);
-        User guestUser3 = TestFactory.createUser("Murun", "murun@gmail.com", "123", 1990, 1, 5);
+    	UserU hostUserU = TestFactory.createUser("John", "john@gmail.com", "jhon", 1991, 5, 10);
+        UserU guestUserU1 = TestFactory.createUser("Uulen", "uulen@gmail.com", "123", 1996, 3, 16);
+        UserU guestUserU2 = TestFactory.createUser("Tony", "tony@gmail.com", "123", 1994, 7, 23);
+        UserU guestUserU3 = TestFactory.createUser("Murun", "murun@gmail.com", "123", 1990, 1, 5);
         
-        Address address1 = TestFactory.createAddress("2500 N Clybourn ave", "New York", "New York", "68748");
-        Place place1 = TestFactory.createPlace(address1, 10, "Golden Park");
-        Party party1 = TestFactory.createParty("Home party", 20, new Date(), "casual", place1);
+        AddressU addressU1 = TestFactory.createAddress("2500 N Clybourn ave", "New York", "New York", "68748");
+        Place place1 = TestFactory.createPlace(addressU1, 10, "Golden Park");
+        PartyU partyU1 = TestFactory.createParty("Home party", 20, new Date(), "casual", place1);
         Host host1 = TestFactory.createHost();
         
-        Reservation reservation1 = TestFactory.createReservation(guestUser1, party1, 1001, 50);
-        Guest guest1 = TestFactory.createGuest(guestUser1, reservation1);
+        ReservationU reservationU1 = TestFactory.createReservation(guestUserU1, partyU1, 1001, 50);
+        GuestU guestU1 = TestFactory.createGuest(guestUserU1, reservationU1);
         
-        Reservation reservation2 = TestFactory.createReservation(guestUser2, party1, 1001, 50);
-        Guest guest2 = TestFactory.createGuest(guestUser2, reservation2);
+        ReservationU reservationU2 = TestFactory.createReservation(guestUserU2, partyU1, 1001, 50);
+        GuestU guestU2 = TestFactory.createGuest(guestUserU2, reservationU2);
         
-        Reservation reservation3 = TestFactory.createReservation(guestUser3, party1, 1001, 50);
-        Guest guest3 = TestFactory.createGuest(guestUser3, reservation3);
+        ReservationU reservationU3 = TestFactory.createReservation(guestUserU3, partyU1, 1001, 50);
+        GuestU guestU3 = TestFactory.createGuest(guestUserU3, reservationU3);
         
         // All the reservations that the Host have got. 
-        List<Reservation> allReservations = new ArrayList<Reservation>();
-        allReservations.add(reservation1);
-        allReservations.add(reservation2);
-        allReservations.add(reservation3);
-        party1.setGuestReservList(allReservations);
+        List<ReservationU> allReservationUS = new ArrayList<ReservationU>();
+        allReservationUS.add(reservationU1);
+        allReservationUS.add(reservationU2);
+        allReservationUS.add(reservationU3);
+        partyU1.setGuestReservList(allReservationUS);
         
-        List<Reservation> firstReservations = getAllAcceptedReservationByGuest(guest1);
-        List<Reservation> secondReservations = getAllAcceptedReservationByGuest(guest2);
-        List<Reservation> thirdReservations = getAllAcceptedReservationByGuest(guest3);
+        List<ReservationU> firstReservationUS = getAllAcceptedReservationByGuest(guestU1);
+        List<ReservationU> secondReservationUS = getAllAcceptedReservationByGuest(guestU2);
+        List<ReservationU> thirdReservationUS = getAllAcceptedReservationByGuest(guestU3);
         
         System.out.println("Reservation----->");
-        System.out.println(firstReservations);
-        System.out.println(secondReservations);
-        System.out.println(thirdReservations);
+        System.out.println(firstReservationUS);
+        System.out.println(secondReservationUS);
+        System.out.println(thirdReservationUS);
         
-        double cost1 = getTotalCostOfTheAllReservationByGuest(guest1);
-        double cost2 = getTotalCostOfTheAllReservationByGuest(guest2);
-        double cost3 = getTotalCostOfTheAllReservationByGuest(guest3);
+        double cost1 = getTotalCostOfTheAllReservationByGuest(guestU1);
+        double cost2 = getTotalCostOfTheAllReservationByGuest(guestU2);
+        double cost3 = getTotalCostOfTheAllReservationByGuest(guestU3);
         
         System.out.println(" COST---->");
         System.out.println(cost1);
         System.out.println(cost2);
         System.out.println(cost3);
         
-        double averegeAge = getAvaregeAgeInParticularParty(party1);
+        double averegeAge = getAvaregeAgeInParticularParty(partyU1);
         
         System.out.println("AVG Age: " + averegeAge);
     }    
     // The Lists of accepted reservation is made by guest
-    public static List<Reservation> getAllAcceptedReservationByGuest(Guest guest) {
-    	return guest.getReservationList().stream()
+    public static List<ReservationU> getAllAcceptedReservationByGuest(GuestU guestU) {
+    	return guestU.getReservationList().stream()
     			.filter(p -> p.getStatus().equals(Status.ACCEPT))
     			.collect(Collectors.toList());
     }
     
     // The Total cost of the all the reservations by the guest
-    public static double getTotalCostOfTheAllReservationByGuest(Guest guest) {
-    	return guest.getTotalCostofReservation();
+    public static double getTotalCostOfTheAllReservationByGuest(GuestU guestU) {
+    	return guestU.getTotalCostofReservation();
     }
     
     // The average of the age of the guests in particular party?
-    public static double getAvaregeAgeInParticularParty(Party party) {
-    	return party.getGuestReservList().stream().mapToDouble(p -> p.getGuest().getAge()).average().getAsDouble();
+    public static double getAvaregeAgeInParticularParty(PartyU partyU) {
+    	return partyU.getGuestReservList().stream().mapToDouble(p -> p.getGuest().getAge()).average().getAsDouble();
     }
     
 

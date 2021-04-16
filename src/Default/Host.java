@@ -6,6 +6,6 @@ public class Host implements UserRole {
     private int rating;
 
 
-    private List<Party> partiesList;
+    private List<PartyU> partiesList;
 
 }

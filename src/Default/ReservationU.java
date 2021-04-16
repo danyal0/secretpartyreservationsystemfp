@@ -1,19 +1,19 @@
 package Default;
 
-public class Reservation {
-    private User guest;
-    private Party party;
+public class ReservationU {
+    private UserU guest;
+    private PartyU partyU;
     private Status status;
     private Integer pressCode;
     private double price;
     
-    public Reservation() {
+    public ReservationU() {
 		super();
 	}
 
-	public Reservation(User guest, Party party, Status status, Integer pressCode, double price) {
+	public ReservationU(UserU guest, PartyU partyU, Status status, Integer pressCode, double price) {
         this.guest = guest;
-        this.party = party;
+        this.partyU = partyU;
         this.status = status;
         this.pressCode = pressCode;
         this.price = price;
@@ -23,24 +23,24 @@ public class Reservation {
 
     @Override
 	public String toString() {
-		return "Reservation [guest=" + guest.getName() + ", party=" + party.getName() + ", status=" + status + ", pressCode=" + pressCode
+		return "Reservation [guest=" + guest.getName() + ", party=" + partyU.getName() + ", status=" + status + ", pressCode=" + pressCode
 				+ ", price=" + price + "]";
 	}
 
-	public User getGuest() {
+	public UserU getGuest() {
         return guest;
     }
 
-    public void setGuest(User guest) {
+    public void setGuest(UserU guest) {
         this.guest = guest;
     }
 
-    public Party getParty() {
-        return party;
+    public PartyU getParty() {
+        return partyU;
     }
 
-    public void setParty(Party party) {
-        this.party = party;
+    public void setParty(PartyU partyU) {
+        this.partyU = partyU;
     }
 
     public void setStatus(Status status) {
