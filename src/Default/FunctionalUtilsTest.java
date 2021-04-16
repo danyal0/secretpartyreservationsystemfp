@@ -110,4 +110,35 @@ public class FunctionalUtilsTest {
         LocalDate date = LocalDate.of(2020,03,03);
         assertEquals(Utils.guestsChoosePartyHighPrivacy.apply(parties).size(),2);
     }
+
+
+    @Test
+    public void testPartySortedByTime() {
+        List<UserRole> role = new ArrayList();
+        Address address1 = new Address("1000N 4th Street", "Fairfield", "IA", "52557");
+        Address address2 = new Address("1004N 67th Street", "Iowa City", "IA", "52555");
+        Place place1 = new Place("House 240-B", 3, address1);
+        Place place2 = new Place("House 241-B", 3, address2);
+        User user = new User("John Doe", "12", role, "john@gmail.com", LocalDate.parse("2021-05-01"));
+        List<Party> parties = new ArrayList();
+        parties.add(new Party(0, "Coca-Cola", "a", place1, LocalDate.parse("2021-05-16"), user, "5:00PM"));
+        parties.add(new Party(1, "Mountain Dew", "b", place2, LocalDate.parse("2021-05-16"), user, "6:00PM"));
+        parties.add(new Party(2, "Mango Smoothie", "d", place2, LocalDate.parse("2022-05-16"), user, "7:00PM"));
+        Assert.assertEquals((long)((List)PartyUtils.SortPartyByTime.apply(parties, LocalDate.parse("2021-05-16"))).size(), 2L);
+    }
+
+    @Test
+    public void testPartySortedbyMonth() {
+        List<UserRole> role = new ArrayList();
+        Address address1 = new Address("1000N 4th Street", "Fairfield", "IA", "52557");
+        Address address2 = new Address("1004N 67th Street", "Iowa City", "IA", "52555");
+        Place place1 = new Place("House 240-B", 3, address1);
+        Place place2 = new Place("House 241-B", 3, address2);
+        User user = new User("John Doe", "12", role, "john@gmail.com", LocalDate.parse("2021-05-01"));
+        List<Party> parties = new ArrayList();
+        parties.add(new Party(0, "Coca-Cola", "a", place1, LocalDate.parse("2021-05-16"), user, "5:00PM"));
+        parties.add(new Party(1, "Mountain Dew", "b", place2, LocalDate.parse("2021-05-16"), user, "6:00PM"));
+        parties.add(new Party(2, "Mango Smoothie", "d", place2, LocalDate.parse("2022-05-16"), user, "7:00PM"));
+        Assert.assertEquals((long)((List)PartyUtils.SortPartyByMonth.apply(parties, LocalDate.parse("2021-05-16"))).size(), 3L);
+    }
 }

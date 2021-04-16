@@ -1,6 +1,8 @@
 package Default;
 
 
+import org.junit.Assert;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -32,7 +34,7 @@ public class Main {
 
         System.out.println("By Month:");
         PartyByMonth();
-        System.out.println("\nSort By Time:");
+        System.out.println("\nSort By Time ASC:");
         SortPartyByTime();
         System.out.println("\nParty With Largest Capacity:");
         PartyWithLargestCapacity();
@@ -66,17 +68,12 @@ public class Main {
     public static void PartyByMonth() {
         LocalDate compareDate=LocalDate.of(2021, 04, 21);
         List<Party> party = PartyData.getParty();
-        List<Party> result=party.stream()
-                .filter(p->p.getDate().getMonth().equals(compareDate.getMonth()))
-                .collect(Collectors.toList());
-        System.out.println(result);
+        System.out.println(PartyUtils.SortPartyByMonth.apply(party,compareDate));
     }
     public static void SortPartyByTime() {
+        LocalDate compareDate=LocalDate.parse("2021-05-16");
         List<Party> party = PartyData.getParty();
-        List<Party> result=party.stream()
-               .sorted( (i1, i2) -> i1.getEventtime().compareTo(i2.getEventtime()) )
-                .collect(Collectors.toList());
-        System.out.println(result);
+        System.out.println(PartyUtils.SortPartyByTime.apply(party,compareDate));
     }
     public static void PartyWithLargestCapacity() {
         List<Party> party = PartyData.getParty();

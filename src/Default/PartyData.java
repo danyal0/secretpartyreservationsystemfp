@@ -11,10 +11,10 @@ public class PartyData {
         private static List<Party> partyList = new ArrayList<Party>();
 
   static {
-        partyList.add(new Party(50,"Sexy","Party in Vegas",place,LocalDate.of(2021, 11, 21),host,"5:00PM"));
-        partyList.add(new Party(60,"Bikini","Party in Miami",place,LocalDate.of(2021, 04, 22),host,"6:00PM"));
-        partyList.add(new Party(70,"Semi Casual","Party in Hollywood",place,LocalDate.of(2021, 11, 23),host,"6:00PM"));
-        partyList.add(new Party(80,"Casual","Party in Iowa",place,LocalDate.of(2021, 11, 24),host,"8:00PM"));
+        partyList.add(new Party(50,"Sexy","Party in Vegas",place,LocalDate.parse("2021-04-16"),host,"5:00PM"));
+        partyList.add(new Party(60,"Bikini","Party in Miami",place,LocalDate.parse("2021-05-16"),host,"6:00PM"));
+        partyList.add(new Party(70,"Semi Casual","Party in Hollywood",place,LocalDate.parse("2021-05-16"),host,"6:00PM"));
+        partyList.add(new Party(80,"Casual","Party in Iowa",place,LocalDate.parse("2021-05-16"),host,"8:00PM"));
    }
 
     public static List<Party> getParty() {
