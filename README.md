@@ -5,9 +5,9 @@ Eli:
     - The party that has more guests in a month
     - List of Guests that choose the parties with highest level of privacy 
 Hanna:
-    - List of Morning parties
-    - List of Evening parties
-    - List of parties that happened by a month
+    - List of Parties by Month
+    - List of Parties Sorted by Time
+    - List of Parties by DressCode
 Danyal:
     - How many parties where hosted in a x city
     - Top 5 Hosts in fairfield with best rating
