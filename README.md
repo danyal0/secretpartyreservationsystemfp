@@ -12,10 +12,9 @@ Danyal:
     - How many parties where hosted in a x city
     - Top 5 Hosts in fairfield with best rating
     - List of users that have a reservations in fairfield today
+
 Uulen:
-    - The List of reservation is made by guest
-    - The total cost of the all reservation by the guest
-    - What's the avarege of the age of the guests in particular party?
+
 Angie:
     - List of users which their party reservations were rejected in fairfield today 
     - List of Hosts with worst rating in Fairfield
