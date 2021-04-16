@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class Utils {
     /*Task 1 - Eliza : How much the HOST earn in a year*/
-    public static TriFunction<Host, String, LocalDate, Double> amountHostEarnedPerYear =
+    public static Ternary<Host, String, LocalDate, Double> amountHostEarnedPerYear =
             (host, hostName, date) -> host.getPartiesList().stream()
                     .filter(h -> h.getHostUser().getName()== hostName)
                     .flatMap(p ->p.getGuestReservList().stream())
